@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    var div = $("div");  
+    div.animate({left: '1300px', opacity: '0.4'}, "slow") ;
+    div.animate({fontSize: '3em'}, "slow");
+    div.animate({top: '720px'}, "slow");
+    div.animate({fontSize: '3em'}, "slow");
+    div.animate({left: '0px'}, "slow");
+    div.animate({fontSize: '3em'}, "slow");
+    div.animate({top: '50px'}, "slow");
+    div.animate({fontSize: '1em'}, "slow");
+
+  });
+}); 
+
+</script> 
+</head>
+<body>
+
+<button>Start Animation</button>
+
+
+<div style="background:#66c88b;height:100px;width:200px;position:absolute;">Namaste</div>
+
+
+</body>
+</html>
