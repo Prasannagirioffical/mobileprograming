@@ -1,0 +1,57 @@
+<!-- GET & SET
+      - When "Show Name" is clicked, GET the text from #student-name
+        and display it in #output using .text()
+      - When "Change Name" is clicked, SET #student-name text to your own name
+      - When "Show Bio" is clicked, GET the HTML from #student-bio
+        and display it in #output using .text()
+      - When "Get Input" is clicked, GET the value from #nickname-input
+        and display it in #output using .val()
+      - When "Set Input" is clicked, SET the value of #nickname-input to "jQuery Pro" -->
+      
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    alert("Text1: " + $("#test1").text());
+  });
+  $("#btn2").click(function(){
+    alert("Text: " + $("#student-bio").text());
+  });
+ $("#btn3").click(function(){
+    $("#test1").text("ram rai");
+  });
+});
+</script>
+</head>
+<body>
+
+
+  
+
+<p id="test1">Prasanna giri</p>
+<p id="student-bio">I am a student.</p>
+
+
+
+
+<button id="btn1">Show Name</button>
+<button id="btn2">Show Bio</button>
+<button id="btn3">Change Name</button>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

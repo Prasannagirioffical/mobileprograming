@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  .btn-show {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .btn-hide {
+    background-color: #581713;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+</style>
+<script>
+$(document).ready(function(){
+  $("#toggleBtn").click(function(){
+    $("p").toggle();
+    
+    if ($("p").is(":visible")) {
+      $(this).text("Hide Paragraphs");
+      $(this).removeClass("btn-show").addClass("btn-hide");
+    } else {
+      $(this).text("Show Paragraphs");
+      $(this).removeClass("btn-hide").addClass("btn-show");
+    }
+  });
+});
+</script>
+</head>
+<body>
+<button id="toggleBtn" class="btn-hide">Hide Paragraphs</button>
+<p>If you click the button, I will disappear.</p>
+<p>Click the button again to show me!</p>
+<p>Toggle works for all paragraphs!</p>
+</body>
+</html>
