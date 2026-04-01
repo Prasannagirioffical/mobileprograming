@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Week 3 Assignment</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background:#eef5ff; }
+
+    #profile-card {
+      border: 2px solid #0984e3;
+      padding: 20px;
+      width: 300px;
+      margin-bottom: 20px;
+      background:#ffffff;
+    }
+
+    #profile-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    #output {
+      background: #dfe6e9;
+      padding: 10px;
+      margin-top: 10px;
+      min-height: 30px;
+    }
+
+    .text-highlight {
+      color: #0984e3;
+      font-weight: bold;
+    }
+
+    .dark-mode { background: #2d3436; color: #fff; }
+    .rounded { border-radius: 20px; }
+    .shadow { box-shadow: 0 0 15px #636e72; }
+
+    button { 
+      margin: 4px; 
+      padding: 6px 12px; 
+      cursor: pointer; 
+      background:#0984e3; 
+      color:white; 
+      border:none; 
+      border-radius:6px; 
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2> Profile Demo</h2>
+
+  <div id="profile-card">
+    <img id="profile-photo" src="https://i.pravatar.cc/150?img=12" />
+
+    <div id="student-name">Prasanna Giri</div>
+    <div id="student-bio">
+      Hello! I am Prasanna, an IT student passionate about web development and photography.
+    </div>
+
+    <ul id="skills-list">
+
+      <li>jQuery</li>
+      <li>Web Development</li>
+    </ul>
+
+    <input type="text" id="nickname-input" placeholder="Enter nickname..." />
+  </div>
+
+  <div id="output">Output will show here...</div>
+
+  <hr />
+
+  <h3>1. Get & Set</h3>
+  <button id="btn-show-name">Show Name</button>
+  <button id="btn-change-name">Change Name</button>
+  <button id="btn-show-bio">Show Bio</button>
+  <button id="btn-get-input">Get Input</button>
+  <button id="btn-set-input">Set Input</button>
+
+  <h3>2. CSS Classes</h3>
+  <button id="btn-add-highlight">Highlight Text</button>
+  <button id="btn-remove-highlight">Remove Highlight</button>
+  <button id="btn-toggle-dark">Toggle Dark Mode</button>
+  <button id="btn-toggle-rounded">Toggle Rounded</button>
+
+  <h3>3. CSS Method</h3>
+  <button id="btn-red-bg">Blue Background</button>
+  <button id="btn-reset-bg">Reset Background</button>
+
+  <h3>4. Hide & Show</h3>
+  <button id="btn-hide-photo">Hide Photo</button>
+  <button id="btn-show-photo">Show Photo</button>
+  <button id="btn-toggle-bio">Toggle Bio</button>
+
+  <h3>5. Fade</h3>
+  <button id="btn-fade-out">Fade Out Card</button>
+  <button id="btn-fade-in">Fade In Card</button>
+  <button id="btn-fade-50">Fade to 50%</button>
+
+  <h3>6. Slide</h3>
+  <button id="btn-slide-up">Slide Up Skills</button>
+  <button id="btn-slide-down">Slide Down Skills</button>
+  <button id="btn-slide-toggle">Slide Toggle Skills</button>
+
+  <h3>7. Animate</h3>
+  <button id="btn-animate">Animate Card</button>
+s
+  <script>
+    $('#btn-show-name').click(function () {
+      $('#output').text($('#student-name').text());
+    });
+
+    $('#btn-change-name').click(function () {
+      $('#student-name').text('Prasanna');
+    });
+
+    $('#btn-show-bio').click(function () {
+      $('#output').text($('#student-bio').html());
+    });
+
+    $('#btn-get-input').click(function () {
+      $('#output').text($('#nickname-input').val());
+    });
+
+    $('#btn-set-input').click(function () {
+      $('#nickname-input').val('Prasanna King');
+    });
+
+    $('#btn-add-highlight').click(function () {
+      $('#student-name, #student-bio, #skills-list li').addClass('text-highlight');
+    });
+
+    $('#btn-remove-highlight').click(function () {
+      $('#student-name, #student-bio, #skills-list li').removeClass('text-highlight');
+    });
+
+    $('#btn-toggle-dark').click(function () {
+      $('#profile-card').toggleClass('dark-mode');
+    });
+
+    $('#btn-toggle-rounded').click(function () {
+      $('#profile-photo').toggleClass('rounded');
+    });
+
+
+    $('#btn-red-bg').click(function () {
+      $('#profile-card').css('background', '#74b9ff');
+    });
+
+    $('#btn-reset-bg').click(function () {
+      $('#profile-card').css('background', 'white');
+    });
+
+    $('#btn-hide-photo').click(function () {
+      $('#profile-photo').hide('slow');
+    });
+
+    $('#btn-show-photo').click(function () {
+      $('#profile-photo').show('slow');
+    });
+
+    $('#btn-toggle-bio').click(function () {
+      $('#student-bio').toggle();
+    });
+
+    $('#btn-fade-out').click(function () {
+      $('#profile-card').fadeOut();
+    });
+
+    $('#btn-fade-in').click(function () {
+      $('#profile-card').fadeIn();
+    });
+
+    $('#btn-fade-50').click(function () {
+      $('#profile-card').fadeTo('slow', 0.5);
+    });
+
+    $('#btn-slide-up').click(function () {
+      $('#skills-list').slideUp();
+    });
+
+    $('#btn-slide-down').click(function () {
+      $('#skills-list').slideDown();
+    });
+
+    $('#btn-slide-toggle').click(function () {
+      $('#skills-list').slideToggle();
+    });
+
+    $('#btn-animate').click(function () {
+      $('#profile-card')
+        .animate({ 'margin-left': '200px' }, 1000)
+        .animate({ 'margin-left': '0px' }, 1000);
+    });
+
+    $('#profile-photo').mouseenter(function () {
+      $(this).addClass('shadow');
+    });
+
+    $('#profile-photo').mouseleave(function () {
+      $(this).removeClass('shadow');
+    });
+
+    $('#nickname-input').keyup(function (e) {
+      $('#output').text('Key pressed: ' + e.key);
+    });
+  </script>
+
+</body>
+</html>
